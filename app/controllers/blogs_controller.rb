@@ -22,6 +22,7 @@ class BlogsController < ApplicationController
     blog.update(blog_params)
     redirect_to(blog_path(blog))
   end
+
   def index
     @blogs = Blog.all
     p "標準出力にのみ反映"
@@ -39,7 +40,8 @@ class BlogsController < ApplicationController
   end
 
   private
+
   def blog_params
-    params.require(:blog).permit(:title,:category,:body)
+    params.require(:blog).permit(:title, :category, :body)
   end
 end
